@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#642c3b">
+  <meta name="description" content="Авторские букеты Oops! Flowers — цветы для важных слов и особенных моментов.">
+  <title>Oops! Flowers — букеты с характером</title>
+  <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=qxbCiN-fTr8s6nLcDOax2BVBHPV3UH2xZBamSSwBj0eSJNB90lRT2ZFHdvOFe6PVSSXwBlSBJoOSaPXGstNDJzn8JZorHoFvDQ2vkpPS1whjo8OCcZuNMvmp2VYhbOQ0TeyS0HSKb8YrIF8PNirQGvL-d3JbN3lm-KqAsWjNkRAYu9iptugl1nKV5UOcenwosFZ6JayhluTmIgeE_mCszokkWRlqs_l5RQ3v95XV4SxepbM2xe2v0ejCMDMDXERCMpgxgBeR0eqmyXCIQXUSGUrym6KnWXDd8i4CbnMf5etIQ-lO0hYFukZjA3yuJcdp" charset="UTF-8"></script><style>
+    :root {
+      color-scheme: light;
+      --color-primary: #642c3b;
+      --color-primary-hover: #4f202e;
+      --color-bg: #f8f3ec;
+      --color-surface: #fffdf9;
+      --color-text: #35252a;
+      --color-muted: #6d5b5e;
+      --color-border: #d9cec5;
+      --color-placeholder: #e9ded6;
+      --color-focus: #642c3b;
+      --radius-card: 12px;
+      --radius-image: 8px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 8px 28px rgb(53 37 42 / 6%);
+      --container: 90rem;
+      --page-gutter: clamp(1.25rem, 5vw, 5rem);
+      --section-space: clamp(4rem, 9vw, 8rem);
+      --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      --font-heading: Georgia, "Times New Roman", serif;
+    }
+
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 1.5rem;
+      background: var(--color-bg);
+    }
+
+    body {
+      margin: 0;
+      color: var(--color-text);
+      background: var(--color-bg);
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.1vw, 1.125rem);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-underline-offset: 0.2em; }
+    button, input, textarea { font: inherit; }
+    button, a, summary { -webkit-tap-highlight-color: transparent; }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--color-focus);
+      outline-offset: 4px;
+    }
+
+    a, button, summary {
+      transition: color 160ms ease, background-color 160ms ease,
+        border-color 160ms ease, transform 160ms ease;
+    }
+
+    .container {
+      width: min(100% - (2 * var(--page-gutter)), var(--container));
+      margin-inline: auto;
+    }
+
+    .section { padding-block: var(--section-space); }
+    .section--compact { padding-block: clamp(3rem, 6vw, 5rem); }
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--color-primary);
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      line-height: 1.12;
+    }
+
+    h1 {
+      max-width: 11ch;
+      margin-bottom: 1.5rem;
+      font-size: clamp(2.75rem, 6vw, 5.5rem);
+    }
+
+    h2 {
+      max-width: 17ch;
+      margin-bottom: 1.25rem;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    h3 {
+      margin-bottom: 0.6rem;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+    }
+
+    p { margin-bottom: 1rem; }
+    .muted { color: var(--color-muted); }
+    .section-intro { max-width: 65ch; color: var(--color-muted); }
+    .section-heading { margin-bottom: clamp(2rem, 4vw, 3rem); }
+    .section-heading p:last-child { margin-bottom: 0; }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.4rem;
+      border: 1px solid var(--color-primary);
+      border-radius: var(--radius-pill);
+      background: var(--color-primary);
+      color: var(--color-surface);
+      font-size: 0.98rem;
+      font-weight: 650;
+      line-height: 1.25;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button:hover { border-color: var(--color-primary-hover); background: var(--color-primary-hover); }
+    .button:active { transform: translateY(1px); }
+    .button--outline { background: transparent; color: var(--color-primary); }
+    .button--outline:hover { background: var(--color-primary); color: var(--color-surface); }
+    .button--small { min-height: 44px; padding: 0.7rem 1.05rem; font-size: 0.92rem; }
+
+    .site-header {
+      position: relative;
+      z-index: 5;
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-bg);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 88px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: baseline;
+      gap: 0.35rem;
+      color: var(--color-primary);
+      font-family: var(--font-heading);
+      font-size: clamp(1.35rem, 2vw, 1.75rem);
+      letter-spacing: -0.045em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .logo strong { font-weight: 700; }
+    .desktop-nav { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2rem); }
+    .desktop-nav a, .footer-links a {
+      color: var(--color-muted);
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+    .desktop-nav a:hover, .footer-links a:hover { color: var(--color-primary); }
+    .mobile-menu { display: none; position: relative; }
+    .mobile-menu summary {
+      display: inline-flex;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      color: var(--color-primary);
+      font-size: 0.9rem;
+      font-weight: 650;
+      list-style: none;
+      cursor: pointer;
+    }
+    .mobile-menu summary::-webkit-details-marker { display: none; }
+    .hamburger { display: grid; gap: 4px; }
+    .hamburger span { display: block; width: 17px; height: 1.5px; background: currentColor; }
+    .mobile-menu[open] summary { background: var(--color-placeholder); }
+    .mobile-menu__panel {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      right: 0;
+      display: grid;
+      width: min(19rem, calc(100vw - 2.5rem));
+      gap: 0.25rem;
+      padding: 0.75rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-soft);
+    }
+    .mobile-menu__panel a {
+      padding: 0.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .mobile-menu__panel a:hover { background: var(--color-placeholder); color: var(--color-primary); }
+
+    .hero { padding-block: clamp(3.5rem, 7vw, 6.5rem); }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.86fr);
+      align-items: center;
+      gap: clamp(2.5rem, 7vw, 7rem);
+    }
+    .hero-copy { padding-block: 1rem; }
+    .hero-copy > p:not(.eyebrow) { max-width: 54ch; margin-bottom: 2rem; color: var(--color-muted); }
+    .hero-note { display: flex; align-items: center; gap: 0.8rem; margin-top: 1.4rem; color: var(--color-muted); font-size: 0.9rem; }
+    .hero-note::before { width: 2rem; height: 1px; background: var(--color-border); content: ""; }
+    .image-frame {
+      position: relative;
+      display: grid;
+      min-height: 260px;
+      aspect-ratio: 4 / 5;
+      place-items: center;
+      overflow: hidden;
+      border-radius: var(--radius-image);
+      background:
+        radial-gradient(ellipse at 50% 35%, rgb(255 253 249 / 72%), transparent 45%),
+        var(--color-placeholder);
+      color: var(--color-muted);
+      text-align: center;
+    }
+    .image-frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .image-frame__placeholder {
+      display: grid;
+      max-width: 16rem;
+      justify-items: center;
+      gap: 0.75rem;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .image-frame__placeholder .flower-mark {
+      color: var(--color-primary);
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      line-height: 1;
+    }
+    .image-frame figcaption {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      left: 1rem;
+      z-index: 1;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid rgb(255 253 249 / 55%);
+      border-radius: 8px;
+      background: rgb(255 253 249 / 88%);
+      color: var(--color-text);
+      font-size: 0.82rem;
+      text-align: left;
+      backdrop-filter: blur(8px);
+    }
+
+    .about-grid { display: grid; grid-template-columns: 0.7fr 1fr; gap: clamp(2rem, 8vw, 8rem); }
+    .about-aside { padding-top: 0.4rem; }
+    .about-copy { max-width: 65ch; }
+    .about-signature { margin-top: 2rem; color: var(--color-primary); font-family: var(--font-heading); font-size: 1.5rem; font-style: italic; }
+
+    .benefits-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+    .benefit-card {
+      padding: clamp(1.25rem, 2.4vw, 2rem);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      background: rgb(255 253 249 / 55%);
+    }
+    .benefit-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1.4rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--color-placeholder);
+      color: var(--color-primary);
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+    }
+    .benefit-card p { margin-bottom: 0; color: var(--color-muted); font-size: 0.94rem; }
+
+    .catalog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); }
+    .product-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      background: var(--color-surface);
+      box-shadow: none;
+      transition: box-shadow 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+    .product-card:hover { border-color: #b9a6a0; box-shadow: var(--shadow-soft); transform: translateY(-2px); }
+    .product-card__media {
+      position: relative;
+      display: grid;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      place-items: center;
+      background: var(--color-placeholder);
+      color: var(--color-muted);
+      text-align: center;
+    }
+    .product-card__media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .product-card__placeholder { max-width: 14rem; padding: 1rem; }
+    .product-card__placeholder span {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--color-primary);
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      line-height: 1;
+    }
+    .product-card__body { display: flex; flex: 1; flex-direction: column; padding: clamp(1.15rem, 2vw, 1.65rem); }
+    .product-card__body h3 { margin-bottom: 0.5rem; }
+    .product-card__description { min-height: 3.4em; margin-bottom: 1.25rem; color: var(--color-muted); font-size: 0.92rem; line-height: 1.6; }
+    .product-card__bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: auto; }
+    .price { color: var(--color-primary); font-size: 1.25rem; font-weight: 750; white-space: nowrap; }
+
+    .reviews { background: #f1e8df; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+    .review-card { display: flex; flex-direction: column; padding: clamp(1.4rem, 2.5vw, 2rem); border: 1px solid var(--color-border); border-radius: var(--radius-card); background: var(--color-surface); }
+    .review-stars { margin-bottom: 1rem; color: var(--color-primary); letter-spacing: 0.12em; }
+    .review-card blockquote { margin: 0 0 1.5rem; color: var(--color-text); font-family: var(--font-heading); font-size: 1.18rem; line-height: 1.55; }
+    .review-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: 0.85rem; }
+    .review-meta strong { color: var(--color-text); font-weight: 650; }
+
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(2rem, 7vw, 7rem); align-items: start; }
+    .contact-list { display: grid; gap: 1.35rem; margin: 2rem 0 0; }
+    .contact-item dt { margin-bottom: 0.2rem; color: var(--color-muted); font-size: 0.85rem; }
+    .contact-item dd { margin: 0; overflow-wrap: anywhere; }
+    .contact-item a { color: var(--color-primary); text-decoration-thickness: 1px; }
+    .contact-item a:hover { color: var(--color-primary-hover); }
+    .contact-hours { color: var(--color-text); }
+    .order-panel { padding: clamp(1.4rem, 3vw, 2.5rem); border: 1px solid var(--color-border); border-radius: var(--radius-card); background: var(--color-surface); }
+    .order-panel h3 { margin-bottom: 0.6rem; font-size: 1.65rem; }
+    .order-panel > p { color: var(--color-muted); font-size: 0.94rem; }
+    .order-form { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .form-field { display: grid; gap: 0.4rem; }
+    .form-field label { font-size: 0.92rem; font-weight: 650; }
+    .form-field input, .form-field textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid #b9a9a2;
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+    }
+    .form-field textarea { min-height: 110px; resize: vertical; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: #6d5b5e; opacity: 1; }
+    .form-field input:invalid:not(:placeholder-shown) { border-color: var(--color-primary); }
+    .form-note { margin: 0; color: var(--color-muted); font-size: 0.82rem; line-height: 1.55; }
+    .form-note a { color: var(--color-primary); }
+    .order-form .button { width: 100%; }
+
+    .site-footer { padding-block: 2.5rem; border-top: 1px solid var(--color-border); }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-bottom: 2rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+    .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding-top: 1.25rem; border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: 0.85rem; }
+    .footer-bottom p { margin: 0; }
+    .footer-bottom a { color: var(--color-muted); }
+    .footer-bottom a:hover { color: var(--color-primary); }
+    .privacy-note { max-width: 65ch; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: 0.82rem; }
+
+    @media (max-width: 1023px) {
+      .desktop-nav { gap: 1rem; }
+      .desktop-nav a { font-size: 0.9rem; }
+      .header-cta { display: none; }
+      .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-grid { gap: 2.5rem; }
+    }
+
+    @media (max-width: 767px) {
+      :root { --section-space: 4.5rem; }
+      .header-inner { min-height: 74px; }
+      .desktop-nav { display: none; }
+      .mobile-menu { display: block; }
+      .hero { padding-top: 3.5rem; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 2rem; }
+      .hero-copy { padding: 0; }
+      .hero-copy h1 { max-width: 12ch; }
+      .hero-media { max-width: 34rem; }
+      .about-grid { gap: 1rem; }
+      .about-aside h2 { margin-bottom: 0.5rem; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .review-card { min-height: 0; }
+      .footer-top { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 599px) {
+      .catalog-grid, .benefits-grid { grid-template-columns: 1fr; }
+      .product-card__media { aspect-ratio: 5 / 4; }
+      .product-card__description { min-height: 0; }
+      .product-card__bottom { align-items: stretch; flex-direction: column; }
+      .product-card__bottom .button { width: 100%; }
+      .footer-links { gap: 0.85rem 1rem; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Брендовая страница намеренно сохраняет светлую палитру при системной тёмной теме. */
+    @media (prefers-color-scheme: dark) {
+      :root { color-scheme: light; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Oops! Flowers — на главную"><strong>Oops!</strong> Flowers</a>
+
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="#about">О нас</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <a class="button button--small header-cta" href="#order">Заказать букет</a>
+
+      <details class="mobile-menu">
+        <summary aria-label="Открыть меню">
+          <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
+          Меню
+        </summary>
+        <nav class="mobile-menu__panel" aria-label="Мобильная навигация">
+          <a href="#about">О нас</a>
+          <a href="#catalog">Каталог</a>
+          <a href="#contacts">Контакты</a>
+          <a class="button button--small" href="#order">Заказать букет</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Цветы с характером</p>
+          <h1 id="hero-title">Букеты, которые говорят за вас</h1>
+          <p>Авторские композиции из свежих цветов — для важных слов, особенных дней и просто так.</p>
+          <a class="button" href="#order">Заказать букет <span aria-hidden="true">↗</span></a>
+          <div class="hero-note">Собираем вручную. Упаковываем с вниманием.</div>
+        </div>
+
+        <figure class="hero-media image-frame" aria-label="Фотография главного букета">
+          <!-- Заменить на реальное фото: images/hero-bouquet.jpg -->
+          <div class="image-frame__placeholder" aria-hidden="true">
+            <span class="flower-mark">✳</span>
+            <span>Фото главного букета</span>
+          </div>
+          <img src="images/hero-bouquet.jpg" alt="Авторский букет из кремовых роз и бордовых цветов в минималистичной упаковке">
+          <figcaption>Нежные оттенки. Выразительные детали.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-aside">
+          <p class="eyebrow">О мастерской</p>
+          <h2 id="about-title">Красота в деталях</h2>
+        </div>
+        <div class="about-copy">
+          <p>Oops! Flowers — цветочная мастерская для тех, кто выбирает внимание к деталям. Мы собираем композиции вручную, тщательно отбираем цветы и подбираем упаковку, которая подчёркивает красоту букета, а не отвлекает от неё.</p>
+          <p>Нам близка эстетика без лишнего: спокойные оттенки, выразительные формы и сервис, в котором всё понятно с первого сообщения.</p>
+          <p class="about-signature">Меньше случайного. Больше смысла.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--compact" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Наш подход</p>
+          <h2 id="benefits-title">За что нас выбирают</h2>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">✿</div>
+            <h3>Свежие цветы</h3>
+            <p>Отбираем цветы перед сборкой и следим за состоянием каждой композиции.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">↗</div>
+            <h3>Доставка в день заказа</h3>
+            <p>Подберём доступный интервал доставки и заранее согласуем детали.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">◇</div>
+            <h3>Авторская упаковка</h3>
+            <p>Подбираем материалы и оттенки в соответствии с характером букета.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">♡</div>
+            <h3>Внимание к качеству</h3>
+            <p>Проверяем готовую композицию перед передачей покупателю.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog" aria-labelledby="catalog-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Выберите настроение</p>
+          <h2 id="catalog-title">Букеты для особенных моментов</h2>
+          <p class="section-intro">От нежных композиций до выразительных авторских букетов. Если нужен другой оттенок или размер, обсудим это при заказе.</p>
+        </div>
+
+        <div class="catalog-grid">
+          <article class="product-card">
+            <div class="product-card__media">
+              <!-- Заменить на реальное фото: images/bouquet-01-roses.jpg -->
+              <div class="product-card__placeholder" aria-hidden="true"><span>✿</span>Фото букета «Первое чувство»</div>
+              <img src="images/bouquet-01-roses.jpg" alt="Букет из кремовых роз с эвкалиптом в лаконичной упаковке">
+            </div>
+            <div class="product-card__body">
+              <h3>Первое чувство</h3>
+              <p class="product-card__description">Кремовые розы, эвкалипт, авторская упаковка.</p>
+              <div class="product-card__bottom">
+                <!-- заменить на реальные данные: цена букета -->
+                <span class="price">5 900 ₽</span>
+                <a class="button button--small" href="#order" aria-label="Заказать букет «Первое чувство»">Заказать букет</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <!-- Заменить на реальное фото: images/bouquet-02-peonies.jpg -->
+              <div class="product-card__placeholder" aria-hidden="true"><span>✿</span>Фото букета «Нежность»</div>
+              <img src="images/bouquet-02-peonies.jpg" alt="Нежный букет из пудрово-розовых пионов и сезонной зелени">
+            </div>
+            <div class="product-card__body">
+              <h3>Нежность</h3>
+              <p class="product-card__description">Пионы нежно-розовых оттенков, сезонная зелень.</p>
+              <div class="product-card__bottom">
+                <!-- заменить на реальные данные: цена букета -->
+                <span class="price">7 400 ₽</span>
+                <a class="button button--small" href="#order" aria-label="Заказать букет «Нежность»">Заказать букет</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <!-- Заменить на реальное фото: images/bouquet-03-tulips.jpg -->
+              <div class="product-card__placeholder" aria-hidden="true"><span>✿</span>Фото букета «Тихий вечер»</div>
+              <img src="images/bouquet-03-tulips.jpg" alt="Букет из бордовых и молочных тюльпанов в минималистичной упаковке">
+            </div>
+            <div class="product-card__body">
+              <h3>Тихий вечер</h3>
+              <p class="product-card__description">Бордовые и молочные тюльпаны, лаконичная упаковка.</p>
+              <div class="product-card__bottom">
+                <!-- заменить на реальные данные: цена букета -->
+                <span class="price">4 500 ₽</span>
+                <a class="button button--small" href="#order" aria-label="Заказать букет «Тихий вечер»">Заказать букет</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <!-- Заменить на реальное фото: images/bouquet-04-hydrangeas.jpg -->
+              <div class="product-card__placeholder" aria-hidden="true"><span>✿</span>Фото букета «Объятие»</div>
+              <img src="images/bouquet-04-hydrangeas.jpg" alt="Композиция из гортензий приглушённых пудровых оттенков">
+            </div>
+            <div class="product-card__body">
+              <h3>Объятие</h3>
+              <p class="product-card__description">Гортензии пудровых оттенков и сезонные цветы.</p>
+              <div class="product-card__bottom">
+                <!-- заменить на реальные данные: цена букета -->
+                <span class="price">6 200 ₽</span>
+                <a class="button button--small" href="#order" aria-label="Заказать букет «Объятие»">Заказать букет</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <!-- Заменить на реальное фото: images/bouquet-05-mixed.jpg -->
+              <div class="product-card__placeholder" aria-hidden="true"><span>✿</span>Фото букета «Без повода»</div>
+              <img src="images/bouquet-05-mixed.jpg" alt="Смешанный букет из кремовых роз и сезонных цветов приглушённых оттенков">
+            </div>
+            <div class="product-card__body">
+              <h3>Без повода</h3>
+              <p class="product-card__description">Розы, сезонные цветы и деликатная зелень.</p>
+              <div class="product-card__bottom">
+                <!-- заменить на реальные данные: цена букета -->
+                <span class="price">5 200 ₽</span>
+                <a class="button button--small" href="#order" aria-label="Заказать букет «Без повода»">Заказать букет</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <!-- Заменить на реальное фото: images/bouquet-06-signature.jpg -->
+              <div class="product-card__placeholder" aria-hidden="true"><span>✿</span>Фото букета Signature</div>
+              <img src="images/bouquet-06-signature.jpg" alt="Авторская композиция из бордовых роз и кремовых цветов премиального уровня">
+            </div>
+            <div class="product-card__body">
+              <h3>Signature</h3>
+              <p class="product-card__description">Авторская композиция из роз и сезонных премиальных цветов.</p>
+              <div class="product-card__bottom">
+                <!-- заменить на реальные данные: цена букета -->
+                <span class="price">9 800 ₽</span>
+                <a class="button button--small" href="#order" aria-label="Заказать букет Signature">Заказать букет</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Тёплые слова</p>
+          <h2 id="reviews-title">Нам доверяют важные моменты</h2>
+          <p class="section-intro">Примеры оформления отзывов. Перед публикацией замените их реальными отзывами, полученными с разрешения авторов.</p>
+        </div>
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-stars" aria-label="Оценка: 5 из 5">★★★★★</div>
+            <blockquote>«Букет выглядел именно так, как я представляла. Очень деликатная упаковка и приятный сервис».</blockquote>
+            <div class="review-meta">
+              <strong>Анна К.</strong>
+              <!-- заменить на реальные данные: дата отзыва -->
+              <time datetime="2026-08-12">12.08.2026</time>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="Оценка: 5 из 5">★★★★★</div>
+            <blockquote>«Заказывала цветы в подарок. Композиция получилась стильной, а общение было спокойным и внимательным».</blockquote>
+            <div class="review-meta">
+              <strong>Мария С.</strong>
+              <!-- заменить на реальные данные: дата отзыва -->
+              <time datetime="2026-08-24">24.08.2026</time>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="Оценка: 5 из 5">★★★★★</div>
+            <blockquote>«Помогли подобрать букет под повод и бюджет. Получателю очень понравились цветы».</blockquote>
+            <div class="review-meta">
+              <strong>Алексей П.</strong>
+              <!-- заменить на реальные данные: дата отзыва -->
+              <time datetime="2026-09-05">05.09.2026</time>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Контакты</p>
+          <h2 id="contacts-title">Давайте соберём ваш букет</h2>
+          <p class="section-intro">Расскажите, для кого букет и какое настроение вы хотите передать. Поможем определиться с цветами, размером и оформлением.</p>
+
+          <dl class="contact-list">
+            <div class="contact-item">
+              <dt>Телефон</dt>
+              <!-- заменить на реальные данные -->
+              <dd><a href="tel:+74951234567">+7 (495) 123-45-67</a></dd>
+            </div>
+            <div class="contact-item">
+              <dt>Email</dt>
+              <!-- заменить на реальные данные -->
+              <dd><a href="mailto:hello@oopsflowers.ru">hello@oopsflowers.ru</a></dd>
+            </div>
+            <div class="contact-item">
+              <dt>Адрес мастерской</dt>
+              <!-- заменить на реальные данные -->
+              <dd>Москва, ул. Цветочная, д. 12</dd>
+            </div>
+            <div class="contact-item">
+              <dt>Часы работы</dt>
+              <!-- заменить на реальные данные -->
+              <dd class="contact-hours">Ежедневно, 09:00–21:00</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="order-panel" id="order">
+          <h3 id="order-title">Заказать букет</h3>
+          <p>Оставьте контакты и пожелания — мы уточним детали заказа удобным для вас способом.</p>
+
+          <!-- ДЕМО-ФОРМА: заменить action на URL реального обработчика. Без обработчика форма не отправляет заказ. -->
+          <form class="order-form" action="#" method="get">
+            <div class="form-field">
+              <label for="customer-name">Ваше имя *</label>
+              <input id="customer-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться" required>
+            </div>
+            <div class="form-field">
+              <label for="customer-phone">Телефон *</label>
+              <input id="customer-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (999) 123-45-67" pattern="(\+7|8)[\s\-()]?(\d[\s\-()]?){10}" title="Введите российский номер телефона: +7 и 10 цифр или 8 и 10 цифр" required>
+            </div>
+            <div class="form-field">
+              <label for="customer-email">Email (необязательно)</label>
+              <input id="customer-email" name="email" type="email" autocomplete="email" maxlength="120" placeholder="you@example.ru">
+            </div>
+            <div class="form-field">
+              <label for="customer-message">Каким вы представляете букет?</label>
+              <textarea id="customer-message" name="message" maxlength="1000" placeholder="Повод, любимые оттенки, желаемый бюджет"></textarea>
+            </div>
+            <button class="button" type="submit">Обсудить мой букет</button>
+            <p class="form-note">Демонстрационная форма: отправка не настроена. Перед публикацией подключите обработчик и разместите здесь ссылку на <a href="#privacy">политику конфиденциальности</a>.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="#top" aria-label="Oops! Flowers — наверх"><strong>Oops!</strong> Flowers</a>
+        <nav class="footer-links" aria-label="Социальные сети">
+          <!-- заменить на реальные данные: адрес Telegram -->
+          <a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <!-- заменить на реальные данные: адрес сообщества VK -->
+          <a href="https://vk.com/" target="_blank" rel="noopener noreferrer">VK</a>
+          <!-- заменить на реальные данные: адрес Instagram -->
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <!-- заменить на реальные данные: юридическое наименование и год при необходимости -->
+        <p>© 2026 Oops! Flowers</p>
+        <a href="#privacy">Политика конфиденциальности</a>
+      </div>
+      <div class="privacy-note" id="privacy">
+        <strong>Политика конфиденциальности — заглушка.</strong>
+        <!-- заменить на реальные данные: текст политики и сведения об операторе персональных данных -->
+        Перед запуском замените этот текст утверждённой политикой конфиденциальности с данными оператора, целями обработки, сроками хранения и способом отзыва согласия. Не собирайте реальные персональные данные до настройки законного и безопасного процесса обработки.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
